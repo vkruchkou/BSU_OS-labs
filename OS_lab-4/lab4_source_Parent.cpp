@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
 
 	int ms = atoi(argv[1]);
 
-	std::cout << "Ïğîöåññ îæèäàåò" << "\n";
+	std::cout << "ĞŸÑ€Ğ¾Ñ†ĞµÑÑ Ğ¾Ğ¶Ğ¸Ğ´Ğ°ĞµÑ‚" << "\n";
 
 	HANDLE hMutex = OpenMutex(MUTEX_ALL_ACCESS, FALSE, L"hM");
 	HANDLE A = OpenEvent(EVENT_ALL_ACCESS, FALSE, L"A");
@@ -19,9 +19,9 @@ int main(int argc, char* argv[])
 
 	WaitForSingleObject(hMutex, INFINITE);
 	system("cls");
-	std::cout << "Ïğîöåññ ğàáîòàåò" << "\n";
+	std::cout << "ĞŸÑ€Ğ¾Ñ†ĞµÑÑ Ñ€Ğ°Ğ±Ğ¾Ñ‚Ğ°ĞµÑ‚" << "\n";
 	for (int i = 0; i < ms; i++) {
-		std::cout << "À èëè Â\n";
+		std::cout << "Ğ Ğ¸Ğ»Ğ¸ Ğ’\n";
 		char input = ' ';
 		while (input != 'A' && input != 'B') {
 			std::cin >> input;
@@ -34,10 +34,10 @@ int main(int argc, char* argv[])
 				break;
 			}
 			if(input != 'A' && input != 'B')
-				std::cout << "Íåâåğíûé ââîä" << "\n";
+				std::cout << "ĞĞµĞ²ĞµÑ€Ğ½Ñ‹Ğ¹ Ğ²Ğ²Ğ¾Ğ´" << "\n";
 		}
 	}
-	std::cout << "\nÍàæìèòå ëşáóş êëàâèøó, ÷òîáû çàâåğøèòü.\n";
+	std::cout << "\nĞĞ°Ğ¶Ğ¼Ğ¸Ñ‚Ğµ Ğ»ÑĞ±ÑƒÑ ĞºĞ»Ğ°Ğ²Ğ¸ÑˆÑƒ, Ñ‡Ñ‚Ğ¾Ğ±Ñ‹ Ğ·Ğ°Ğ²ĞµÑ€ÑˆĞ¸Ñ‚ÑŒ.\n";
 	_getch();
 
 	ReleaseMutex(hMutex);

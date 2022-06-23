@@ -24,11 +24,11 @@ int main()
 
 	int ps, cs, ms;
 
-	std::cout << "Êîëè÷åñòâî ïðîöåññîðîâ Parent" << "\n";
+	std::cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¿Ñ€Ð¾Ñ†ÐµÑÑÐ¾Ñ€Ð¾Ð² Parent" << "\n";
 	std::cin >> ps;
-	std::cout << "Êîëè÷åñòâî ïðîöåññîðîâ  Child" << "\n";
+	std::cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¿Ñ€Ð¾Ñ†ÐµÑÑÐ¾Ñ€Ð¾Ð²  Child" << "\n";
 	std::cin >> cs;
-	std::cout << "Êîëè÷åñòâî ñîîáùåíèé, ïðèíÿòûõ îò Parent èëè Child" << "\n";
+	std::cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ð¹, Ð¿Ñ€Ð¸Ð½ÑÑ‚Ñ‹Ñ… Ð¾Ñ‚ Parent Ð¸Ð»Ð¸ Child" << "\n";
 	std::cin >> ms;
 
 	HANDLE semaphore = CreateSemaphore(NULL, 2, 2, L"S");
@@ -44,9 +44,9 @@ int main()
 		if (!CreateProcess(NULL, lpszCommandLine1, NULL, NULL, FALSE,
 			CREATE_NEW_CONSOLE, NULL, NULL, &si, &piApp[pi]))
 		{
-			std::cout << "Íîâûé ïðîöåññ íå ñîçäàåòñÿ.\n";
-			std::cout << "Ïðîâåðüòå èìÿ ïðîöåññà.\n";
-			std::cout << "Íàæìèòå ëþáóþ êëàâèøó, ÷òîáû çàâåðøèòü.\n";
+			std::cout << "ÐÐ¾Ð²Ñ‹Ð¹ Ð¿Ñ€Ð¾Ñ†ÐµÑÑ Ð½Ðµ ÑÐ¾Ð·Ð´Ð°ÐµÑ‚ÑÑ.\n";
+			std::cout << "ÐŸÑ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð¸Ð¼Ñ Ð¿Ñ€Ð¾Ñ†ÐµÑÑÐ°.\n";
+			std::cout << "ÐÐ°Ð¶Ð¼Ð¸Ñ‚Ðµ Ð»ÑŽÐ±ÑƒÑŽ ÐºÐ»Ð°Ð²Ð¸ÑˆÑƒ, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð·Ð°Ð²ÐµÑ€ÑˆÐ¸Ñ‚ÑŒ.\n";
 			_getch();
 			return 0;
 		}
@@ -57,9 +57,9 @@ int main()
 		if (!CreateProcess(NULL, lpszCommandLine2, NULL, NULL, FALSE,
 			CREATE_NEW_CONSOLE, NULL, NULL, &si, &piApp[pi]))
 		{
-			std::cout << "Íîâûé ïðîöåññ íå ñîçäàåòñÿ.\n";
-			std::cout << "Ïðîâåðüòå èìÿ ïðîöåññà.\n";
-			std::cout << "Íàæìèòå ëþáóþ êëàâèøó, ÷òîáû çàâåðøèòü.\n";
+			std::cout << "ÐÐ¾Ð²Ñ‹Ð¹ Ð¿Ñ€Ð¾Ñ†ÐµÑÑ Ð½Ðµ ÑÐ¾Ð·Ð´Ð°ÐµÑ‚ÑÑ.\n";
+			std::cout << "ÐŸÑ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð¸Ð¼Ñ Ð¿Ñ€Ð¾Ñ†ÐµÑÑÐ°.\n";
+			std::cout << "ÐÐ°Ð¶Ð¼Ð¸Ñ‚Ðµ Ð»ÑŽÐ±ÑƒÑŽ ÐºÐ»Ð°Ð²Ð¸ÑˆÑƒ, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð·Ð°Ð²ÐµÑ€ÑˆÐ¸Ñ‚ÑŒ.\n";
 			_getch();
 			return 0;
 		}

@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
 	for (int i = 1; i < argc; i++)
 		m[i - 1] = atoi(argv[i]);
 
-	std::cout << "\nÈñõîäíûé ìàññèâ\n";
+	std::cout << "\nÐ˜ÑÑ…Ð¾Ð´Ð½Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð²\n";
 	printMas(m, argc - 1);
 
 	bool key = false;
@@ -53,12 +53,12 @@ int main(int argc, char* argv[])
 			r = false;
 		}
 	}
-	std::cout << "\nÏîëó÷åííûé ìàññèâ\n";
+	std::cout << "\nÐŸÐ¾Ð»ÑƒÑ‡ÐµÐ½Ð½Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð²\n";
 	printMas(m, argc - 1);
 
 	delete[] m;
 
-	std::cout << "Íàæìèòå ëþáóþ êëàâèøó, ÷òîáû çàâåðøèòü.\n";
+	std::cout << "ÐÐ°Ð¶Ð¼Ð¸Ñ‚Ðµ Ð»ÑŽÐ±ÑƒÑŽ ÐºÐ»Ð°Ð²Ð¸ÑˆÑƒ, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð·Ð°Ð²ÐµÑ€ÑˆÐ¸Ñ‚ÑŒ.\n";
 
 	_getch();
     ExitProcess(1);

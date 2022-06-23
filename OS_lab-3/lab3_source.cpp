@@ -29,7 +29,7 @@ void printMas() {
 DWORD WINAPI Work(LPVOID par)
 {
 	EnterCriticalSection(&cs);
-	std::cout << "Ââåäèòå âðåìåííîé èíòåðâàë, òðåáóåìûé äëÿ îòäûõ" << "\n";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð½Ð¾Ð¹ Ð¸Ð½Ñ‚ÐµÑ€Ð²Ð°Ð», Ñ‚Ñ€ÐµÐ±ÑƒÐµÐ¼Ñ‹Ð¹ Ð´Ð»Ñ Ð¾Ñ‚Ð´Ñ‹Ñ…" << "\n";
 	std::cin >> ttime;
 	bool key = false;
 	int rs = 0;
@@ -92,15 +92,15 @@ int main()
 	InitializeCriticalSection(&cs);
 	InitializeCriticalSection(&cs2);
 
-	std::cout << "Ââåäèòå ðàçìåð ìàññèâà" << "\n";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°ÑÑÐ¸Ð²Ð°" << "\n";
 	std::cin >> ssize;
 
 	mas = new int[ssize];
 
-	std::cout << "Ââåäèòå ìàññèâ ðàçìåðíîñòè " << ssize << "\n";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¼Ð°ÑÑÐ¸Ð² Ñ€Ð°Ð·Ð¼ÐµÑ€Ð½Ð¾ÑÑ‚Ð¸ " << ssize << "\n";
 	writeMas();
 
-	std::cout << "Èñõîäíûé ìàññèâ ðàçìåðíîñòè " << ssize << "\n";
+	std::cout << "Ð˜ÑÑ…Ð¾Ð´Ð½Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð² Ñ€Ð°Ð·Ð¼ÐµÑ€Ð½Ð¾ÑÑ‚Ð¸ " << ssize << "\n";
 	printMas();
 	
 
@@ -112,7 +112,7 @@ int main()
 	sumElement = CreateThread(NULL, 0, SumElement, NULL, CREATE_SUSPENDED, &IDs);
 	if (sumElement == NULL) return GetLastError();
 
-	std::cout << "Bâåäèòå k" << "\n";
+	std::cout << "BÐ²ÐµÐ´Ð¸Ñ‚Ðµ k" << "\n";
 	std::cin >> k;
 
 	ResumeThread(work);
@@ -123,19 +123,19 @@ int main()
 	ResumeThread(sumElement);
 	SetEvent(hOutEvent);
 
-	std::cout << "Ïðîìåæóòî÷íûé âûâîä " << "\n";
+	std::cout << "ÐŸÑ€Ð¾Ð¼ÐµÐ¶ÑƒÑ‚Ð¾Ñ‡Ð½Ñ‹Ð¹ Ð²Ñ‹Ð²Ð¾Ð´ " << "\n";
 	printMas();
 
 	LeaveCriticalSection(&cs);
 	EnterCriticalSection(&cs2);
 
-	std::cout << "ðåçóëüòàò ðàáîòû ïîòîêà SumElement: sum = " << sum << "\n";
+	std::cout << "Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹ Ð¿Ð¾Ñ‚Ð¾ÐºÐ° SumElement: sum = " << sum << "\n";
 
 	LeaveCriticalSection(&cs2);
 	DeleteCriticalSection(&cs2);
 	EnterCriticalSection(&cs);
 
-	std::cout << "Èòîãîâûé ìàññèâ" << "\n";
+	std::cout << "Ð˜Ñ‚Ð¾Ð³Ð¾Ð²Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð²" << "\n";
 	printMas;
 
 	LeaveCriticalSection(&cs);

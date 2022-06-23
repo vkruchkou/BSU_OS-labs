@@ -25,7 +25,7 @@ int main()
 	si.dwFlags = STARTF_USEPOSITION;
 	CreateProcess(NULL, lpszCommandLine, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &piApp);
 
-	std::cout << "Ñîçäàí íîâûé ïðîöåññ.\n";
+	std::cout << "Ð¡Ð¾Ð·Ð´Ð°Ð½ Ð½Ð¾Ð²Ñ‹Ð¹ Ð¿Ñ€Ð¾Ñ†ÐµÑÑ.\n";
 
 	WaitForSingleObject(piApp.hProcess, INFINITE);
 
@@ -35,7 +35,7 @@ int main()
 
 	CreateProcess(NULL, lpszAppName2, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &si2, &piApp2);
 
-	std::cout << "Ñîçäàí íîâûé ïðîöåññ.\n";
+	std::cout << "Ð¡Ð¾Ð·Ð´Ð°Ð½ Ð½Ð¾Ð²Ñ‹Ð¹ Ð¿Ñ€Ð¾Ñ†ÐµÑÑ.\n";
 
 	SetThreadPriority(piApp2.hProcess, HIGH_PRIORITY_CLASS);
 	WaitForSingleObject(piApp2.hProcess, INFINITE);

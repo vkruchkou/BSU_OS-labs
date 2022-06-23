@@ -15,10 +15,10 @@ int main(int argc, char* argv[])
 	HANDLE C = OpenEvent(EVENT_ALL_ACCESS, FALSE, L"C");
 	HANDLE D = OpenEvent(EVENT_ALL_ACCESS, FALSE, L"D");
 
-	std::cout << "Ïðîöåññ îæèäàåò" << "\n";
+	std::cout << "ÐŸÑ€Ð¾Ñ†ÐµÑÑ Ð¾Ð¶Ð¸Ð´Ð°ÐµÑ‚" << "\n";
 	WaitForSingleObject(semaphore, INFINITE);
 	system("cls");
-	std::cout << "Ïðîöåññ ðàáîòàåò" << "\n";
+	std::cout << "ÐŸÑ€Ð¾Ñ†ÐµÑÑ Ñ€Ð°Ð±Ð¾Ñ‚Ð°ÐµÑ‚" << "\n";
 	for (int i = 0; i < ms; i++) {
 		cout << "C or D\n";
 		char input = ' ';
@@ -33,10 +33,10 @@ int main(int argc, char* argv[])
 				break;
 			}
 			if (input != 'C' && input != 'D')
-				std::cout << "Íåâåðíûé ââîä" << "\n";
+				std::cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð²Ð²Ð¾Ð´" << "\n";
 		}
 	}
-	std::cout << "\nÍàæìèòå ëþáóþ êëàâèøó, ÷òîáû çàâåðøèòü.\n";
+	std::cout << "\nÐÐ°Ð¶Ð¼Ð¸Ñ‚Ðµ Ð»ÑŽÐ±ÑƒÑŽ ÐºÐ»Ð°Ð²Ð¸ÑˆÑƒ, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð·Ð°Ð²ÐµÑ€ÑˆÐ¸Ñ‚ÑŒ.\n";
 	_getch();
 
 	ReleaseSemaphore(semaphore, 1, NULL);

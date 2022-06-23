@@ -8,7 +8,7 @@ int main(int argc, char* argv[])
 	setlocale(LC_ALL, "rus");
 
 	int* mass = new int[20];
-	std::cout << "×èñëà Ôèáîíà÷÷è\n";
+	std::cout << "Ð§Ð¸ÑÐ»Ð° Ð¤Ð¸Ð±Ð¾Ð½Ð°Ñ‡Ñ‡Ð¸\n";
 	mass[0] = 0;
 	mass[1] = 1;
 	std::cout << mass[0] << " ";
@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
 	}
 
 	std::cout << "\n";
-	std::cout << "Íàæìèòå ëþáóþ êëàâèøó, ÷òîáû çàâåðøèòü.\n";
+	std::cout << "ÐÐ°Ð¶Ð¼Ð¸Ñ‚Ðµ Ð»ÑŽÐ±ÑƒÑŽ ÐºÐ»Ð°Ð²Ð¸ÑˆÑƒ, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð·Ð°Ð²ÐµÑ€ÑˆÐ¸Ñ‚ÑŒ.\n";
 
 	delete[] mass;
 	_getch();
