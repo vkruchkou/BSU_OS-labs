@@ -2,6 +2,7 @@
 #include <process.h>
 #include <iostream>
 
+
 int getRandomInt() {
 	return -100 + rand() % 200;
 }
@@ -53,22 +54,24 @@ DWORD WINAPI Count()
 		mass[i] = mass[i - 1] + mass[i - 2];
 		std::cout << mass[i] << " ";
 	}
-
 	std::cout << "\n";
+	delete[] mass;
 	return 0;
 }
 
 DWORD WINAPI threadMain(LPVOID par)
 {
 	int n, x;
-	int* mas;
 	HANDLE hThread1, hThread2;
 	DWORD IDThread1;
 	UINT IDThread2;
 
+	auto Imas = std::make_unique<int>();
+	int* mas = Imas.get();
+
 	n = (int)par;
 	mas = new int[n];
-	
+
 	srand(time(0));
 	for (int i = 0; i < n; i++) {
 		mas[i] = getRandomInt();
@@ -86,21 +89,24 @@ DWORD WINAPI threadMain(LPVOID par)
 	m.x = x;
 
 	hThread1 = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)Count, 0, CREATE_SUSPENDED, &IDThread1);
+	if (hThread1 == NULL)
+		return GetLastError();
+
 	hThread2 = (HANDLE)_beginthreadex(NULL, 0, worker, (void*)&m, 0, &IDThread2);
-	
+	if (hThread2 == NULL)
+		return GetLastError();
+
 	SuspendThread(worker);
 	ResumeThread(worker);
 
 	WaitForSingleObject(hThread2, INFINITE);
-	
+
 	ResumeThread(hThread1);
 
 	WaitForSingleObject(hThread1, INFINITE);
 
 	CloseHandle(hThread2);
 	CloseHandle(hThread1);
-
-	delete[] mas;
 
 	return 0;
 }
