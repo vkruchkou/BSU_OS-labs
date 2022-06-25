@@ -136,7 +136,7 @@ int main()
 	EnterCriticalSection(&cs);
 
 	std::cout << "Итоговый массив" << "\n";
-	printMas;
+	printMas();
 
 	LeaveCriticalSection(&cs);
 	DeleteCriticalSection(&cs);
