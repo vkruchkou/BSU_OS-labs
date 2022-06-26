@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
 	HANDLE R = OpenEvent(EVENT_ALL_ACCESS, FALSE, L"R");
 	HANDLE SR = OpenEvent(EVENT_ALL_ACCESS, TRUE, L"SR");
 
-	std::cout << "В ожидание получения размерности массива" << "/n";
+	std::cout << "В ожидание получения размерности массива" << "\n";
 	WaitForSingleObject(R, INFINITE);
 	int n;
 	DWORD dwBytesRead;
@@ -28,9 +28,9 @@ int main(int argc, char* argv[])
 	}
 	system("cls");
 
-	std::cout << "Simple получил размер массива: " << n << "/n";
+	std::cout << "Simple получил размер массива: " << n << "\n";
 	_int32* mas = new _int32[n];
-	std::cout << "Сгенерированный массив" << "/n";
+	std::cout << "Сгенерированный массив" << "\n";
 
 	srand(time(0));
 	for (int i = 0; i < n; i++) {
