@@ -65,7 +65,7 @@ int main(int argc, char* argv[])
 			if (keyl == true) {
 				mas[i] = mas[i] * (-1);
 			}
-			std::cout << mas[i] << endl;
+			std::cout << mas[i] << "/n";
 			DWORD dwBytesWritten;
 			if (!WriteFile(writePipe, &mas[i], sizeof(mas[i]), &dwBytesWritten, NULL))
 			{
