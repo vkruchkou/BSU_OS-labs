@@ -10,10 +10,62 @@ int main()
 	setlocale(LC_ALL, "rus");
 
 	HANDLE hMutex = CreateMutex(NULL, FALSE, L"hM");
+	if (NULL == hMutex)
+	{
+		cout << "Error. Не получилось создать Mutex." << endl;
+		system("pause");
+		return GetLastError();
+	}
 	HANDLE A = CreateEvent(NULL, FALSE, FALSE, L"A");
+	if (NULL == A)
+	{
+		CloseHandle(hMutex);
+		cout << "Error. Не получилось создать Event." << endl;
+		system("pause");
+		return GetLastError();
+	}
 	HANDLE B = CreateEvent(NULL, FALSE, FALSE, L"B");
+	if (NULL == B)
+	{
+		CloseHandle(A);
+		CloseHandle(hMutex);
+		cout << "Error. Не получилось создать Event." << endl;
+		system("pause");
+		return GetLastError();
+	}
 	HANDLE C = CreateEvent(NULL, FALSE, FALSE, L"C");
+	if (NULL == C)
+	{
+		CloseHandle(A);
+		CloseHandle(B);
+		CloseHandle(hMutex);
+		cout << "Error. Не получилось создать Event." << endl;
+		system("pause");
+		return GetLastError();
+	}
 	HANDLE D = CreateEvent(NULL, FALSE, FALSE, L"D");
+	if (NULL == D)
+	{
+		CloseHandle(A);
+		CloseHandle(B);
+		CloseHandle(C);
+		CloseHandle(hMutex);
+		cout << "Error. Не получилось создать Event." << endl;
+		system("pause");
+		return GetLastError();
+	}
+	HANDLE semaphore = CreateSemaphore(NULL, 2, 2, L"S");
+	if (NULL == semaphore)
+	{
+		CloseHandle(A);
+		CloseHandle(B);
+		CloseHandle(C);
+		CloseHandle(D);
+		CloseHandle(hMutex);
+		cout << "Error. Не получилось создать Semaphore." << endl;
+		system("pause");
+		return GetLastError();
+	}
 
 
 	TCHAR lpszCommandLine1[256] = L"Parent.exe";
@@ -31,7 +83,6 @@ int main()
 	std::cout << "Количество сообщений, принятых от Parent или Child" << "\n";
 	std::cin >> ms;
 
-	HANDLE semaphore = CreateSemaphore(NULL, 2, 2, L"S");
 	PROCESS_INFORMATION *piApp = new PROCESS_INFORMATION[ps + cs];
 	HANDLE *piH = new HANDLE[ps + cs];
 
@@ -92,7 +143,10 @@ int main()
 		CloseHandle(piApp[i].hThread);
 		CloseHandle(piApp[i].hProcess);
 	}
-
+	CloseHandle(A);
+	CloseHandle(B);
+	CloseHandle(C);
+	CloseHandle(D);
 	CloseHandle(hMutex);
 	CloseHandle(semaphore);
 	delete[] piH;
