@@ -1,7 +1,6 @@
 ﻿#include <iostream>
 #include <boost/thread/thread.hpp>
 #include <boost/chrono/chrono.hpp>
-#include<ctime>
 #include <boost/foreach.hpp>
 #include <boost/array.hpp>
 #include <vector>

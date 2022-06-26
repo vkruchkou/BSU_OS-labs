@@ -1,7 +1,6 @@
 #include <boost/process.hpp>
 #include <boost/detail/winapi/process.hpp>
 #include <iostream>
-#include <ctime>
 
 struct new_window
     : ::boost::process::detail::handler_base
