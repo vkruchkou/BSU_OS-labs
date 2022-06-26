@@ -24,9 +24,6 @@ public:
 		return (* dice)();
 	}
 };
-int getRandomInt() {
-	return -100 + rand() % 200;
-}
 
 void printMas(std::vector<int> &mas) {
 	for (auto i : mas)
