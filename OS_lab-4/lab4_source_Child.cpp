@@ -20,10 +20,10 @@ int main(int argc, char* argv[])
 	system("cls");
 	std::cout << "Процесс работает" << "\n";
 	for (int i = 0; i < ms; i++) {
-		cout << "C or D\n";
+		std::cout << "C or D\n";
 		char input = ' ';
 		while (input != 'C' && input != 'D') {
-			cin >> input;
+			std::cin >> input;
 			if (input == 'C') {
 				SetEvent(C);
 				break;
