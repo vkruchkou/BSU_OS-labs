@@ -2,7 +2,6 @@
 #include <conio.h>
 #include <iostream>
 #include <time.h>
-using namespace std;
 
 class MonitorStack
 {
@@ -125,9 +124,9 @@ int main()
 
 	int* producerProductCountList = new int[countProducer];
 	for (int i = 0; i < countProducer; i++) {
-		cout << "Введите количество элементов для " << i + 1 << "-ого потока producer:\n";
+		std::cout << "Введите количество элементов для " << i + 1 << "-ого потока producer:\n";
 		int producerProductCount;
-		cin >> producerProductCount;
+		std::cin >> producerProductCount;
 
 		producerProductCountList[i] = producerProductCount;
 	}
@@ -137,9 +136,9 @@ int main()
 
 	int* consumerProductCountList = new int[countConsumer];
 	for (int i = 0; i < countConsumer; i++) {
-		cout << "Введите количество элементов для " << i + 1 << "-ого потока consumer:\n";
+		std::cout << "Введите количество элементов для " << i + 1 << "-ого потока consumer:\n";
 		int consumerProductCount;
-		cin >> consumerProductCount;
+		std::cin >> consumerProductCount;
 
 		consumerProductCountList[i] = consumerProductCount;
 	}
@@ -186,7 +185,8 @@ int main()
 	for (int i = 0; i < countConsumer; i++) {
 		CloseHandle(hConsumer[i]);
 	}
-
+	delete[] producerProductCountList;
+	delete[] consumerProductCountList;
 	delete[] IDConsumer;
 	delete[] IDProducer;
 	delete[] hConsumer;
